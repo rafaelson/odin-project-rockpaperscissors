@@ -1,3 +1,11 @@
+const startButton = document.querySelector(".start-button");
+
+startButton.addEventListener("click", () => deleteElement(startButton));
+
+function deleteElement(x) {
+  x.remove();
+}
+
 function computerPlay() {
   let randNumber = Math.floor(Math.random() * 3) + 1;
   switch (randNumber) {
@@ -55,14 +63,14 @@ function game() {
   let score = 0;
   let playerSelection;
 
-  for (counter = 0; counter < 5; counter++) {
+  /*for (counter = 0; counter < 5; counter++) {
     playerSelection = prompt("What do you choose?");
     result = playRound(playerSelection, computerPlay());
     if (result.slice(4, 7) == "win") {
       ++score;
     }
     console.log(result);
-  }
+  }*/
 
   if (score >= 3) {
     console.log(`Congratulations! You won the game with a score of ${score}!`);
