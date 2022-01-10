@@ -1,14 +1,11 @@
-/*const startButton = document.querySelector(".start-button");
-
-startButton.addEventListener("click", () => deleteElement(startButton)); */
-
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
+const result = document.querySelector(".result");
 
-rock.addEventListener("click", () => playRound("rock", computerPlay()));
-paper.addEventListener("click", () => playRound("paper", computerPlay()));
-scissors.addEventListener("click", () => playRound("scissors", computerPlay()));
+rock.addEventListener("click", () => playRound("Rock", computerPlay()));
+paper.addEventListener("click", () => playRound("Paper", computerPlay()));
+scissors.addEventListener("click", () => playRound("Scissors", computerPlay()));
 
 function deleteElement(x) {
   x.remove();
@@ -26,41 +23,32 @@ function computerPlay() {
   }
 }
 
-function caseInsensitive(str) {
-  let tmp1;
-  let tmp2;
-  tmp1 = str.slice(0, 1);
-  tmp1 = tmp1.toUpperCase();
-  tmp2 = str.slice(1);
-  tmp2 = tmp2.toLowerCase();
-  return tmp1 + tmp2;
-}
-
 function playRound(playerSelection, computerSelection) {
-  playerSelection = caseInsensitive(playerSelection);
-
   if (playerSelection == computerSelection) {
-    return "It's a Draw!";
+    result.innerText = "It's a Draw!";
   } else {
     switch (playerSelection) {
       case "Rock":
         if (computerSelection == "Paper") {
-          return "You lose! Paper beats Rock!";
+          result.innerText = "You lose! Paper beats Rock!";
         } else {
-          return "You win! Rock beats scissors!";
+          result.innerText = "You win! Rock beats scissors!";
         }
+        break;
       case "Paper":
         if (computerSelection == "Rock") {
-          return "You win! Paper beats Rock!";
+          result.innerText = "You win! Paper beats Rock!";
         } else {
-          return "You lose! Scissors beat paper!";
+          result.innerText = "You lose! Scissors beat paper!";
         }
+        break;
       case "Scissors":
         if (computerSelection == "Paper") {
-          return "You win! Scissors beats Paper!";
+          result.innerText = "You win! Scissors beats Paper!";
         } else {
-          return "You lose! Rock beats Scissors!";
+          result.innerText = "You lose! Rock beats Scissors!";
         }
+        break;
     }
   }
 }

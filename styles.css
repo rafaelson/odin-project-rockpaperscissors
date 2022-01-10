@@ -25,6 +25,13 @@ body {
   font-size: 15vh;
 }
 
+.result {
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .start-button {
   font-size: 18px;
   border: none;
