@@ -1,6 +1,14 @@
-const startButton = document.querySelector(".start-button");
+/*const startButton = document.querySelector(".start-button");
 
-startButton.addEventListener("click", () => deleteElement(startButton));
+startButton.addEventListener("click", () => deleteElement(startButton)); */
+
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+
+rock.addEventListener("click", () => playRound("rock", computerPlay()));
+paper.addEventListener("click", () => playRound("paper", computerPlay()));
+scissors.addEventListener("click", () => playRound("scissors", computerPlay()));
 
 function deleteElement(x) {
   x.remove();
