@@ -2,6 +2,9 @@ const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 const result = document.querySelector(".result");
+const scoreCounter = document.querySelector(".score");
+let playerScore = 0;
+let computerScore = 0;
 
 rock.addEventListener("click", () => playRound("Rock", computerPlay()));
 paper.addEventListener("click", () => playRound("Paper", computerPlay()));
@@ -31,26 +34,33 @@ function playRound(playerSelection, computerSelection) {
       case "Rock":
         if (computerSelection == "Paper") {
           result.innerText = "You lose! Paper beats Rock!";
+          computerScore++;
         } else {
           result.innerText = "You win! Rock beats scissors!";
+          playerScore++;
         }
         break;
       case "Paper":
         if (computerSelection == "Rock") {
           result.innerText = "You win! Paper beats Rock!";
+          playerScore++;
         } else {
           result.innerText = "You lose! Scissors beat paper!";
+          computerScore++;
         }
         break;
       case "Scissors":
         if (computerSelection == "Paper") {
           result.innerText = "You win! Scissors beats Paper!";
+          playerScore++;
         } else {
           result.innerText = "You lose! Rock beats Scissors!";
+          computerScore++;
         }
         break;
     }
   }
+  scoreCounter.innerText = `Computer: ${computerScore} | You: ${playerScore}`;
 }
 
 function game() {
