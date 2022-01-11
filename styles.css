@@ -1,7 +1,7 @@
 body {
   min-height: 100vh;
   margin: 0;
-  background-color: mediumpurple;
+  background-color: #eeeeee;
 }
 
 .score {
@@ -24,6 +24,16 @@ body {
   align-items: center;
   justify-content: space-evenly;
   font-size: 15vh;
+}
+
+.rock,
+.paper,
+.scissors {
+  border-width: 2px;
+  border-color: #aad8d3;
+  border-style: solid;
+  border-radius: 25px;
+  background-color: #aad8d3;
 }
 
 .result {
