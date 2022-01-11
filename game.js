@@ -10,10 +10,6 @@ rock.addEventListener("click", () => playRound("Rock", computerPlay()));
 paper.addEventListener("click", () => playRound("Paper", computerPlay()));
 scissors.addEventListener("click", () => playRound("Scissors", computerPlay()));
 
-function deleteElement(x) {
-  x.remove();
-}
-
 function computerPlay() {
   let randNumber = Math.floor(Math.random() * 3) + 1;
   switch (randNumber) {
@@ -24,6 +20,19 @@ function computerPlay() {
     case 3:
       return "Scissors";
   }
+}
+
+function checkWinner() {
+  if (playerScore == 5) {
+    result.innerText = "You won the game!";
+    computerScore = 0;
+    playerScore = 0;
+  } else if (computerScore == 5) {
+    result.innerText = "Computer won the game!";
+    computerScore = 0;
+    playerScore = 0;
+  }
+  scoreCounter.innerText = `Computer: ${computerScore} | You: ${playerScore}`;
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -61,26 +70,5 @@ function playRound(playerSelection, computerSelection) {
     }
   }
   scoreCounter.innerText = `Computer: ${computerScore} | You: ${playerScore}`;
-}
-
-function game() {
-  let counter;
-  let result;
-  let score = 0;
-  let playerSelection;
-
-  /*for (counter = 0; counter < 5; counter++) {
-    playerSelection = prompt("What do you choose?");
-    result = playRound(playerSelection, computerPlay());
-    if (result.slice(4, 7) == "win") {
-      ++score;
-    }
-    console.log(result);
-  }*/
-
-  if (score >= 3) {
-    console.log(`Congratulations! You won the game with a score of ${score}!`);
-  } else {
-    console.log(`You lost the game with a score of ${score}`);
-  }
+  checkWinner();
 }
