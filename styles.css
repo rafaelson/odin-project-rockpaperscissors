@@ -9,6 +9,7 @@ body {
   right: 0;
   margin-right: 5px;
   font-size: 20px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .container {
@@ -42,6 +43,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 20px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .start-button {
